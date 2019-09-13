@@ -1,0 +1,397 @@
+<html lang="en">
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Dashboard</title>
+
+    <link rel="icon" type="image/png" href="img/MarcusLogoFavicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/screen.css">
+
+    <link href='js/node_modules/@fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='js/node_modules/@fullcalendar/daygrid/main.css' rel='stylesheet' />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+    <script src='js/node_modules/@fullcalendar/core/main.js'></script>
+    <script src='js/node_modules/@fullcalendar/daygrid/main.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('Calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'dayGrid' ]
+            });
+
+            calendar.render();
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="col-md-12 flex dashboard-left-hold p0">
+            <div class="col-md-3 p0 border-blue fade dash-top-left">
+                <div class="container bg-left-top py-sec">
+                    <div class="row white inner">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 bg-mid-top p0 dashboard-mid-hold border-blue fade dash-top-mid">
+                <div class="row fade">
+                    <div class="col-md-12 p0">
+                        <ul class="flex mid-top-nav p0">
+                            <li><a href=""><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+                            <li><a href=""><i class="fas fa-key"></i> Admin</a></li>
+                            <li><a href=""><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a href=""><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 logo-hold">
+                        <img class="logo" src="img/MarcusLogo.png">
+                    </div>
+                    <div class="col-md-12 dash-button-wrapper flex">
+                        <div class="col-md-6 center">
+                            <a href="#" class="btn dash-btn">Messages</a>
+                        </div>
+                        <div class="col-md-6 center">
+                            <a href="#" class="btn dash-btn">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 p0 ov-h border-blue bg-ocean fade dash-top-right">
+                <div class="content-hold  fade">
+                    <h1 class="center py-sec pink-shadow">Welcome to your Dashboard!</h1>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 flex p0 dashboard-right-hold fade">
+            <div class="col-md-3 p0 border-blue fade dash-bot-left">
+                <div class="col-md-12 center py-sec-3" style="border-bottom: 3px solid #46627d;">
+                    <h2>Welcome Back Jasmine Alter!</h2>
+                </div>
+                <div class="col-md-12 dash-menu p0 ">
+                    <ul class="p0">
+                        <li class="center mobile-show"><a class="mob-collapse" style="padding:0" data-toggle="collapse" href="#mobile-nav" role="button" aria-expanded="false" aria-controls="mobile-nav">Menu</a></li>
+                        <div class="desktop-show">
+                            <li id="SalesHold" class="dash-link-hold-active toggle"><a id="SalesHoldLink" class="dash-link-active toggle"><i class="fas fa-search-dollar"></i>Sales</a></li>
+                            <li class=" toggle"  id="ClientsHold"><a id="ClientsHoldLink" class="toggle"><i class="far fa-handshake"></i>Clients</a></li>
+                            <li class=" toggle"  id="CalendarHold"><a id="CalendarHoldLink"  class="toggle"><i class="fas fa-calendar-alt"></i>Calendar</a></li>
+                            <li class=" toggle"  id="LocationsHold"><a id="LocationsHoldLink"  class="toggle"><i class="fas fa-map-marker-alt"></i>Locations</a></li>
+                            <li class=" toggle"  id="SocialHold"><a id="SocialHoldLink"  class="toggle"><i class="fas fa-share-alt"></i>Social</a></li>
+                            <li  class=" toggle" id="SettingsHold"><a id="SettingsHoldLink"  class="toggle"><i class="fas fa-sliders-h"></i>Settings</a></li>
+                        </div>
+                        <div class="collapse" id="mobile-nav">
+                            <li id="SalesHoldMobile"><a id="SalesHoldLinkMobile"><i class="fas fa-search-dollar"></i>Sales</a></li>
+                            <li id="ClientsHoldMobile"><a id="ClientsHoldLinkMobile"><i class="far fa-handshake"></i>Clients</a></li>
+                            <li id="CalendarHoldMobile"><a id="CalendarHoldLinkMobile" ><i class="fas fa-calendar-alt"></i>Calendar</a></li>
+                            <li id="LocationsHoldMobile"><a id="LocationsHoldLinkMobile" ><i class="fas fa-map-marker-alt"></i>Locations</a></li>
+                            <li id="SocialHoldMobile"><a id="SocialHoldLinkMobile" ><i class="fas fa-share-alt"></i>Social</a></li>
+                            <li id="SettingsHoldMobile"><a id="SettingsHoldLinkMobile" ><i class="fas fa-sliders-h"></i>Settings</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-show col-md-12 bg-blue p0 details-toggle">
+                <h4><a class="mob-collapse" data-toggle="collapse" href="#detailsCollapse" role="button" aria-expanded="false" aria-controls="detailsCollapse">Show Details</a></h4>
+            </div>
+            <div class="desktop-show col-md-4 p0 bg-blue border-blue mid-lower-hold fade dash-bot-mid toggle" id="dash-bot-mid">
+                <div class="SalesListHold mid-list-block toggle" id="SalesListHold"></div>
+                <div class="ClientsListHold toggle" id="ClientsListHold"></div>
+                <div class="CalendarListHold toggle" id="CalendarListHold"></div>
+                <div class="LocationsListHold toggle" id="LocationsListHold"></div>
+                <div class="SocialListHold toggle " id="SocialListHold"></div>
+                <div class="SettingsListHold toggle" id="SettingsListHold"></div>
+            </div>
+            <div class="mobile-show">
+                <div id="detailsCollapse" class="collapse col-md-4 p0 bg-blue border-blue mid-lower-hold fade dash-bot-mid ">
+                    <div class="row col-md-12 dash-row p0 fade">
+                        <div class="dash-side-title py-sec-2 bg-dark-blue greyblue">
+                            <h3 class="center m0 ">20 AUG 2019</h3>
+                        </div>
+                        <div class="col-md-10 dash-desc-hold">
+                            <h3 class="py-sec-2 white bold">Test Title</h3>
+                            <p class="greyblue bold">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 dash-row p0 fade">
+                        <div class="dash-side-title py-sec-2 bg-dark-blue greyblue">
+                            <h3 class="center m0 ">18 AUG 2019</h3>
+                        </div>
+                        <div class="col-md-10 dash-desc-hold">
+                            <h3 class="py-sec-2 white bold">Test Title</h3>
+                            <p class="greyblue bold">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 dash-row p0 fade">
+                        <div class="dash-side-title py-sec-2 bg-dark-blue greyblue">
+                            <h3 class="center m0 ">17 AUG 2019</h3>
+                        </div>
+                        <div class="col-md-10 dash-desc-hold">
+                            <h3 class="py-sec-2 white bold">Test Title</h3>
+                            <p class="greyblue bold">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 dash-row p0 fade">
+                        <div class="dash-side-title py-sec-2 bg-dark-blue greyblue">
+                            <h3 class="center m0 ">17 AUG 2019</h3>
+                        </div>
+                        <div class="col-md-10 dash-desc-hold">
+                            <h3 class="py-sec-2 white bold">Test Title</h3>
+                            <p class="greyblue bold">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 dash-row p0 fade">
+                        <div class="dash-side-title py-sec-2 bg-dark-blue greyblue">
+                            <h3 class="center m0">12 AUG 2019</h3>
+                        </div>
+                        <div class="col-md-10 dash-desc-hold">
+                            <h3 class="py-sec-2 white bold">Test Title</h3>
+                            <p class="greyblue bold">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 dash-row p0 fade">
+                        <div class="dash-side-title py-sec-2 bg-dark-blue greyblue">
+                            <h3 class="center m0 ">08 AUG 2019</h3>
+                        </div>
+                        <div class="col-md-10 dash-desc-hold">
+                            <h3 class="py-sec-2 white bold">Test Title</h3>
+                            <p class="greyblue bold">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5  border-blue fade dash-bot-right">
+                <div class="SalesChart show-chart toggle" id="SalesChartHold">
+                    <h2 class="py-sec-3 center greyblue">Example Sales Data</h2>
+                    <canvas id="salesChart" width="400" height="400"></canvas>
+                    <div class="col-md-12 py-sec-2">
+                        <h4 class="center">A Summary of your Example Data</h4>
+                        <p class="py-sec-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque leo enim, convallis in mauris vel, aliquet interdum leo. Nullam pellentesque leo elementum, aliquam quam mattis, placerat lacus. Quisque volutpat nibh et est imperdiet, eu porta ex facilisis. Donec feugiat at quam mollis porta. Aliquam pellentesque est at nisi ullamcorper eleifend. Donec eget cursus urna. Cras eros purus, rhoncus eu blandit eu, tempor tincidunt arcu. Curabitur vestibulum tristique urna, non dapibus nibh fermentum nec. Suspendisse rhoncus feugiat quam, eu aliquet est scelerisque pharetra. Pellentesque nec leo et massa rutrum condimentum quis in enim. Praesent ultricies turpis at nisi aliquam ultrices. Praesent sed convallis felis. Nunc elementum metus ac est tincidunt aliquet. Sed porta aliquet orci, a tristique orci euismod non. Aenean eleifend commodo dignissim.                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ClientChart toggle" id="ClientChartHold">
+                    <h2 class="py-sec-3 center greyblue">Example Client Data</h2>
+                    <canvas id="clientChart" width="400" height="400"></canvas>
+                    <div class="col-md-12 py-sec-2">
+                        <h4 class="center">A Summary of your Example Data</h4>
+                        <p class="py-sec-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque leo enim, convallis in mauris vel, aliquet interdum leo. Nullam pellentesque leo elementum, aliquam quam mattis, placerat lacus. Quisque volutpat nibh et est imperdiet, eu porta ex facilisis. Donec feugiat at quam mollis porta. Aliquam pellentesque est at nisi ullamcorper eleifend. Donec eget cursus urna. Cras eros purus, rhoncus eu blandit eu, tempor tincidunt arcu. Curabitur vestibulum tristique urna, non dapibus nibh fermentum nec. Suspendisse rhoncus feugiat quam, eu aliquet est scelerisque pharetra. Pellentesque nec leo et massa rutrum condimentum quis in enim. Praesent ultricies turpis at nisi aliquam ultrices. Praesent sed convallis felis. Nunc elementum metus ac est tincidunt aliquet. Sed porta aliquet orci, a tristique orci euismod non. Aenean eleifend commodo dignissim.                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="CalendarChart toggle" id="CalendarChartHold">
+                    <h2 class="py-sec-3 center greyblue">Example Calendar Data</h2>
+                    <div id='Calendar'></div>
+                    <div class="col-md-12 py-sec-2">
+                        <h4 class="center">A Summary of your Example Data</h4>
+                        <p class="py-sec-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque leo enim, convallis in mauris vel, aliquet interdum leo. Nullam pellentesque leo elementum, aliquam quam mattis, placerat lacus. Quisque volutpat nibh et est imperdiet, eu porta ex facilisis. Donec feugiat at quam mollis porta. Aliquam pellentesque est at nisi ullamcorper eleifend. Donec eget cursus urna. Cras eros purus, rhoncus eu blandit eu, tempor tincidunt arcu. Curabitur vestibulum tristique urna, non dapibus nibh fermentum nec. Suspendisse rhoncus feugiat quam, eu aliquet est scelerisque pharetra. Pellentesque nec leo et massa rutrum condimentum quis in enim. Praesent ultricies turpis at nisi aliquam ultrices. Praesent sed convallis felis. Nunc elementum metus ac est tincidunt aliquet. Sed porta aliquet orci, a tristique orci euismod non. Aenean eleifend commodo dignissim.                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="LocationsChart toggle" id="LocationsChartHold">
+                    <h2 class="py-sec-3 center greyblue">Example Location Data</h2>  
+                    <div id="map"></div>
+                    <script>
+                        // Initialize and add the map
+                        function initMap() {
+                        // The location of Uluru  
+                        var uluru = {lat: 35.227194, lng: -80.843118};
+                        // The map, centered at Uluru
+                        var map = new google.maps.Map(
+                            document.getElementById('map'), {zoom: 15, center: uluru});
+                        // The marker, positioned at Uluru
+                        var marker = new google.maps.Marker({position: uluru, map: map});
+                        }
+                    </script>
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5yissRxZMhaiafNPl58pbgXthemHYIRM&callback=initMap"> </script>
+                    <div class="col-md-12 py-sec-2">
+                        <h4 class="center">A Summary of your Example Data</h4>
+                        <p class="py-sec-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque leo enim, convallis in mauris vel, aliquet interdum leo. Nullam pellentesque leo elementum, aliquam quam mattis, placerat lacus. Quisque volutpat nibh et est imperdiet, eu porta ex facilisis. Donec feugiat at quam mollis porta. Aliquam pellentesque est at nisi ullamcorper eleifend. Donec eget cursus urna. Cras eros purus, rhoncus eu blandit eu, tempor tincidunt arcu. Curabitur vestibulum tristique urna, non dapibus nibh fermentum nec. Suspendisse rhoncus feugiat quam, eu aliquet est scelerisque pharetra. Pellentesque nec leo et massa rutrum condimentum quis in enim. Praesent ultricies turpis at nisi aliquam ultrices. Praesent sed convallis felis. Nunc elementum metus ac est tincidunt aliquet. Sed porta aliquet orci, a tristique orci euismod non. Aenean eleifend commodo dignissim.                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="SocialChart toggle" id="SocialChartHold">
+                    <h2 class="py-sec-3 center greyblue">Example Social Data</h2>
+                    <canvas id="socialChart" width="400" height="400"></canvas>
+                    <div class="col-md-12 py-sec-2">
+                        <h4 class="center">A Summary of your Example Data</h4>
+                        <p class="py-sec-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque leo enim, convallis in mauris vel, aliquet interdum leo. Nullam pellentesque leo elementum, aliquam quam mattis, placerat lacus. Quisque volutpat nibh et est imperdiet, eu porta ex facilisis. Donec feugiat at quam mollis porta. Aliquam pellentesque est at nisi ullamcorper eleifend. Donec eget cursus urna. Cras eros purus, rhoncus eu blandit eu, tempor tincidunt arcu. Curabitur vestibulum tristique urna, non dapibus nibh fermentum nec. Suspendisse rhoncus feugiat quam, eu aliquet est scelerisque pharetra. Pellentesque nec leo et massa rutrum condimentum quis in enim. Praesent ultricies turpis at nisi aliquam ultrices. Praesent sed convallis felis. Nunc elementum metus ac est tincidunt aliquet. Sed porta aliquet orci, a tristique orci euismod non. Aenean eleifend commodo dignissim.                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        "use-strict";
+
+
+        //Sales Chart
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Johnson', 'Evans', 'Lewis', 'Grant', 'Peterson', 'Coal'],
+                datasets: [{
+                    label: ' # of Sales',
+                    data: [12, 19, 7, 15, 9, 20],
+                    backgroundColor: 'rgb(254, 123, 121, 0.5)',
+                    borderColor: [
+                        'rgb(47, 88, 130, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    pointRadius: 5,
+                    borderWidth: 10,
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                title: {
+					display: true,
+					text: 'A layout of example data specfic to your company'
+				},
+            }
+        });
+
+        //Client Chart
+        var ctx = document.getElementById('clientChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: ['Number of Purchases', 'Monthly Revenue', 'Customers', 'Support Tickets'],
+                datasets: [{
+                    label: ' Client Data',
+                    data: [12000, 20000, 8670, 900],
+                    backgroundColor: [
+                    'rgb(47, 88, 130, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)'],
+                    borderColor: [
+                        'rgb(47, 88, 130, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)'
+                    ],
+                    pointRadius: 5,
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                title: {
+					display: true,
+					text: 'A layout of example data specfic to your company'
+				},
+            }
+        });
+
+        //Social Chart
+        var ctx = document.getElementById('socialChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Followers', 'Posts', 'Engagement', 'Mentions', 'Times Trending'],
+                datasets: [{
+                    label: ' Social Data',
+                    data: [12000, 16000, 30000, 20000, 1200],
+                    backgroundColor: [
+                    'rgb(47, 88, 130, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)'],
+                    borderColor: [
+                        'rgb(47, 88, 130, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                    ],
+                    pointRadius: 5,
+                    borderWidth: 5,
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                title: {
+					display: true,
+					text: 'A layout of example data specfic to your company'
+				},
+            }
+        });
+
+    </script>
+    <div id="footer">
+        <table width="100%;">
+            <tbody>
+                <tr>
+                    <td class="foot-logo">
+                    </td>
+                    <td class="foot-contact">
+                        <div class="cms-block">
+                            <div class="row">
+                                <div class="col half">
+
+                                </div>
+                                <div class="col half">
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="foot-signup">
+                        <img src="img/MarcusLogo-small.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/custom.js"></script>
+
+</body>
